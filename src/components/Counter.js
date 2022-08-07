@@ -1,6 +1,6 @@
 import {useSelector, useDispatch} from "react-redux";
 import { counterActions } from "../services/reducers";
-
+import { sagaActions } from "../services/actions";
 import "./Counter.css"
 const Counter = () => {
     const value = useSelector(state=> state.counter.value)
@@ -13,7 +13,7 @@ const Counter = () => {
         dispatch(counterActions.decreaseBy1())
     }
     const increaseByValueHandler = () => {
-        dispatch(counterActions.increaseByValue(5))
+        dispatch({type:sagaActions.INCREASE_BY_VALUE, payload: 5})
     }
     const decreaseByValueHandler = () => {
         dispatch(counterActions.decreaseByValue(5))
