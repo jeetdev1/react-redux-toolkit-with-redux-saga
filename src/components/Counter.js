@@ -16,7 +16,7 @@ const Counter = () => {
         dispatch({type:sagaActions.INCREASE_BY_VALUE, payload: 5})
     }
     const decreaseByValueHandler = () => {
-        dispatch(counterActions.decreaseByValue(5))
+        dispatch({type: sagaActions.DECREASE_BY_VALUE, payload: 5})
     }
 
     return (
